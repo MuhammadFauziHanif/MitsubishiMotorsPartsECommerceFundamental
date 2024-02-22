@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>MitsubishiMotorsPartsECommerce.Interface</RootNamespace>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MitsubishiMotorsPartsECommerce.BO\MitsubishiMotorsPartsECommerce.BO.vbproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>MitsubishiMotorsPartsECommerce.DAL</RootNamespace>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MitsubishiMotorsPartsECommerce.BO\MitsubishiMotorsPartsECommerce.BO.vbproj" />
+    <ProjectReference Include="..\MitsubishiMotorsPartsECommerce.Interface\MitsubishiMotorsPartsECommerce.Interface.vbproj" />
+  </ItemGroup>
+
+</Project>
