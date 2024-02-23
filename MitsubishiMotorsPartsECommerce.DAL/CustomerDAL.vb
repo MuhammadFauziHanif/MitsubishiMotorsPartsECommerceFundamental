@@ -84,7 +84,37 @@ Public Class CustomerDAL
     End Function
 
     Public Function GetById(id As Integer) As Customer Implements ICrud(Of Customer).GetById
-        Throw New NotImplementedException()
+        Try
+            Dim strSP = "GetCustomer"
+            cmd = New SqlCommand(strSP, conn)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@CustomerID", id)
+
+            conn.Open()
+            dr = cmd.ExecuteReader()
+            If dr.HasRows Then
+                dr.Read()
+                Dim customer As New Customer
+                customer.CustomerID = dr("CustomerID")
+                customer.FirstName = dr("FirstName")
+                customer.LastName = dr("LastName")
+                customer.Email = dr("Email")
+                customer.PhoneNumber = dr("PhoneNumber")
+                customer.Address = dr("Address")
+                customer.PasswordHash = dr("PasswordHash")
+                Return customer
+            Else
+                Return Nothing
+            End If
+        Catch sqlex As SqlException
+            Throw New ArgumentException(sqlex.Message & " " & sqlex.Number)
+        Catch ex As Exception
+            Throw ex
+        Finally
+            cmd.Dispose()
+            conn.Close()
+        End Try
     End Function
 
     Public Function Update(obj As Customer) As Integer Implements ICrud(Of Customer).Update
