@@ -11,6 +11,8 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "MitsubishiMotorsPartsEComme
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MitsubishiMotorsPartsECommerce.Presentation", "MitsubishiMotorsPartsECommerce.Presentation\MitsubishiMotorsPartsECommerce.Presentation.vbproj", "{2C45FE7C-5752-4A50-AEB2-4820E5918368}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MitsubishiMotorsPartsECommerce.WebFormApp", "MitsubishiMotorsPartsECommerce.WebFormApp\MitsubishiMotorsPartsECommerce.WebFormApp.vbproj", "{585125F0-A80C-4E01-B0A8-58F2088D920F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2C45FE7C-5752-4A50-AEB2-4820E5918368}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C45FE7C-5752-4A50-AEB2-4820E5918368}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C45FE7C-5752-4A50-AEB2-4820E5918368}.Release|Any CPU.Build.0 = Release|Any CPU
+		{585125F0-A80C-4E01-B0A8-58F2088D920F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{585125F0-A80C-4E01-B0A8-58F2088D920F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{585125F0-A80C-4E01-B0A8-58F2088D920F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{585125F0-A80C-4E01-B0A8-58F2088D920F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
