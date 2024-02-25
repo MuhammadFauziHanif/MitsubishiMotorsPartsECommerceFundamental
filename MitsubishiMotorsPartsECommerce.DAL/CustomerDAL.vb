@@ -72,7 +72,6 @@ Public Class CustomerDAL
             End If
             dr.Close()
 
-
             Return Customers
 
         Catch ex As Exception
@@ -118,10 +117,49 @@ Public Class CustomerDAL
     End Function
 
     Public Function Update(obj As Customer) As Integer Implements ICrud(Of Customer).Update
-        Throw New NotImplementedException()
+        Try
+            Dim strSP = "UpdateCustomer"
+            cmd = New SqlCommand(strSP, conn)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@CustomerID", obj.CustomerID)
+            cmd.Parameters.AddWithValue("@FirstName", obj.FirstName)
+            cmd.Parameters.AddWithValue("@LastName", obj.LastName)
+            cmd.Parameters.AddWithValue("@Email", obj.Email)
+            cmd.Parameters.AddWithValue("@PhoneNumber", obj.PhoneNumber)
+            cmd.Parameters.AddWithValue("@Address", obj.Address)
+
+            conn.Open()
+            Dim result = cmd.ExecuteNonQuery()
+            Return result
+        Catch sqlex As SqlException
+            Throw New ArgumentException(sqlex.Message & " " & sqlex.Number)
+        Catch ex As Exception
+            Throw ex
+        Finally
+            cmd.Dispose()
+            conn.Close()
+        End Try
     End Function
 
     Public Function Delete(id As Integer) As Integer Implements ICrud(Of Customer).Delete
-        Throw New NotImplementedException()
+        Try
+            Dim strSP = "DeleteCustomer"
+            cmd = New SqlCommand(strSP, conn)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@CustomerID", id)
+
+            conn.Open()
+            Dim result = cmd.ExecuteNonQuery()
+            Return result
+        Catch sqlex As SqlException
+            Throw New ArgumentException(sqlex.Message & " " & sqlex.Number)
+        Catch ex As Exception
+            Throw ex
+        Finally
+            cmd.Dispose()
+            conn.Close()
+        End Try
     End Function
 End Class
