@@ -1,6 +1,6 @@
 ﻿Imports MitsubishiMotorsPartsECommerce.BO
 
-Public Interface ISalesOrder
+Public Interface ISalesOrderDAL
     Function Create(customerID As Integer, lstprod As String) As Integer
 
     Function GetRevenueByCategory() As List(Of CategorySalesView)

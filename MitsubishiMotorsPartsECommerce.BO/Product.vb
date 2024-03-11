@@ -6,4 +6,7 @@
     Public Property Price As Decimal
     Public Property StockQuantity As Integer
     Public Property ImageUrl As String
+
+    Public Property Category As ProductCategory
+
 End Class
