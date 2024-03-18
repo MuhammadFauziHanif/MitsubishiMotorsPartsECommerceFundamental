@@ -15,10 +15,8 @@
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-    <%-- add table sorter --%>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
-    <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+
 
 </head>
 <body>
@@ -72,6 +70,8 @@
     </form>
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+        <%: Scripts.Render("https://cdn.datatables.net/2.0.2/js/dataTables.js")  %>
+        <%: Scripts.Render("https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js") %>
     </asp:PlaceHolder>
 </body>
 </html>

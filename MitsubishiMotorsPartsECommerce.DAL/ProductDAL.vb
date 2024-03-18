@@ -3,6 +3,7 @@ Imports System.Data
 Imports System.Data.SqlClient
 Imports Dapper
 Imports MitsubishiMotorsPartsECommerce.BO
+Imports MitsubishiMotorsPartsECommerce.DAL.MitsubishiMotorsPartsECommerce.DAL
 Imports MitsubishiMotorsPartsECommerce.DAL.MyWebFormApp.DAL.Interfaces
 Imports MitsubishiMotorsPartsECommerce.Interface
 
@@ -15,8 +16,7 @@ Public Class ProductDAL
     Private dr As SqlDataReader
 
     Private Function GetConnectionString() As String
-        ' Return @"Data Source=ACTUAL;Initial Catalog=LatihanDb;Integrated Security=True;TrustServerCertificate=True"
-        Return ConfigurationManager.ConnectionStrings("MyDbConnectionString").ConnectionString
+        Return Helper.GetConnectionString()
     End Function
 
     Public Sub Insert(entity As Product) Implements ICrudDAL(Of Product).Insert

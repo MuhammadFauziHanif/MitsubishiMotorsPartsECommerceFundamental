@@ -6,8 +6,9 @@ using System.Text;
 
 namespace MitsubishiMotorsPartsECommerce.BLL.Interfaces
 {
-    public interface ISalesOrder
+    public interface ISalesOrderBLL
     {
         int Create(SalesOrderCreateDTO salesOrderCreate);
+        IEnumerable<SalesOrderHeaderDTO> GetSalesOrderHeaderByCustomerID(int customerID);
     }
 }

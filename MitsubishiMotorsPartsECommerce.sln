@@ -9,11 +9,11 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "MitsubishiMotorsPartsEComme
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "MitsubishiMotorsPartsECommerce.Interface", "MitsubishiMotorsPartsECommerce.Interface\MitsubishiMotorsPartsECommerce.Interface.vbproj", "{AE14E29B-08FC-4E55-9120-AF819C07AB80}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MitsubishiMotorsPartsECommerce.Presentation", "MitsubishiMotorsPartsECommerce.Presentation\MitsubishiMotorsPartsECommerce.Presentation.vbproj", "{2C45FE7C-5752-4A50-AEB2-4820E5918368}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MitsubishiMotorsPartsECommerce.BLL", "MitsubishiMotorsPartsECommerce.BLL\MitsubishiMotorsPartsECommerce.BLL.csproj", "{23A39472-E000-4C2F-96A4-F7E04650A166}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MitsubishiMotorsPartsECommerce.BLL", "MitsubishiMotorsPartsECommerce.BLL\MitsubishiMotorsPartsECommerce.BLL.csproj", "{23A39472-E000-4C2F-96A4-F7E04650A166}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MitsubishiMotorsPartsECommerce.WebForm", "MitsubishiMotorsPartsECommerce.WebForm\MitsubishiMotorsPartsECommerce.WebForm.vbproj", "{CD8E53D2-B177-494B-AE08-1CEEF98E43D7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MitsubishiMotorsPartsECommerce.MVC", "MitsubishiMotorsPartsECommerce.MVC\MitsubishiMotorsPartsECommerce.MVC.csproj", "{12719C6F-51F1-40D6-BB4A-7F559BB22724}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +33,6 @@ Global
 		{AE14E29B-08FC-4E55-9120-AF819C07AB80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE14E29B-08FC-4E55-9120-AF819C07AB80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE14E29B-08FC-4E55-9120-AF819C07AB80}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C45FE7C-5752-4A50-AEB2-4820E5918368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C45FE7C-5752-4A50-AEB2-4820E5918368}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C45FE7C-5752-4A50-AEB2-4820E5918368}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C45FE7C-5752-4A50-AEB2-4820E5918368}.Release|Any CPU.Build.0 = Release|Any CPU
 		{23A39472-E000-4C2F-96A4-F7E04650A166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{23A39472-E000-4C2F-96A4-F7E04650A166}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23A39472-E000-4C2F-96A4-F7E04650A166}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{CD8E53D2-B177-494B-AE08-1CEEF98E43D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD8E53D2-B177-494B-AE08-1CEEF98E43D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD8E53D2-B177-494B-AE08-1CEEF98E43D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12719C6F-51F1-40D6-BB4A-7F559BB22724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12719C6F-51F1-40D6-BB4A-7F559BB22724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12719C6F-51F1-40D6-BB4A-7F559BB22724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12719C6F-51F1-40D6-BB4A-7F559BB22724}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,6 +2,7 @@
 Imports System.Data
 Imports System.Data.SqlClient
 Imports MitsubishiMotorsPartsECommerce.BO
+Imports MitsubishiMotorsPartsECommerce.DAL.MitsubishiMotorsPartsECommerce.DAL
 Imports MitsubishiMotorsPartsECommerce.Interface
 
 Public Class SalesOrderDAL
@@ -13,7 +14,7 @@ Public Class SalesOrderDAL
     Private dr As SqlDataReader
 
     Private Function GetConnectionString() As String
-        Return ConfigurationManager.ConnectionStrings("MyDbConnectionString").ConnectionString
+        Return Helper.GetConnectionString()
     End Function
 
     Public Function Create(customerID As Integer, lstprod As String) As Integer Implements ISalesOrderDAL.Create
@@ -101,5 +102,40 @@ Public Class SalesOrderDAL
             cmd.Dispose()
             conn.Close()
         End Try
+    End Function
+
+    Public Function GetSalesOrderHeaderByCustomerID(customerID As Integer) As List(Of OrderHeader) Implements ISalesOrderDAL.GetSalesOrderHeaderByCustomerID
+        Using conn As New SqlConnection(GetConnectionString())
+            Dim Orders As New List(Of OrderHeader)
+            Try
+                Dim strSql = "SELECT * FROM OrderHeader WHERE CustomerID = @CustomerID ORDER BY OrderDate DESC"
+                cmd = New SqlCommand(strSql, conn)
+                cmd.Parameters.AddWithValue("@CustomerID", customerID)
+                conn.Open()
+                dr = cmd.ExecuteReader()
+                If dr.HasRows Then
+                    While dr.Read
+                        Dim order As New OrderHeader
+                        order.OrderID = CInt(dr("OrderID"))
+                        order.CustomerID = CInt(dr("CustomerID"))
+                        order.OrderDate = CDate(dr("OrderDate"))
+                        order.TotalAmount = CDec(dr("TotalAmount"))
+                        order.OrderStatus = dr("OrderStatus").ToString
+                        Orders.Add(order)
+                    End While
+                End If
+                dr.Close()
+
+                Return Orders
+
+            Catch sqlex As SqlException
+                Throw New ArgumentException(sqlex.Message & " " & sqlex.Number)
+            Catch ex As Exception
+                Throw ex
+            Finally
+                cmd.Dispose()
+                conn.Close()
+            End Try
+        End Using
     End Function
 End Class

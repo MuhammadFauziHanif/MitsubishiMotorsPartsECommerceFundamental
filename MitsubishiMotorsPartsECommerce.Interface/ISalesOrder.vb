@@ -6,4 +6,6 @@ Public Interface ISalesOrderDAL
     Function GetRevenueByCategory() As List(Of CategorySalesView)
 
     Function GetRevenueByMonth() As List(Of MonthSalesView)
+
+    Function GetSalesOrderHeaderByCustomerID(customerID As Integer) As List(Of OrderHeader)
 End Interface

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MitsubishiMotorsPartsECommerce.BLL.Interfaces
 {
-    internal interface ICategoryBLL
+    public interface ICategoryBLL
     {
         void Delete(int id);
         IEnumerable<CategoryDTO> GetAll();

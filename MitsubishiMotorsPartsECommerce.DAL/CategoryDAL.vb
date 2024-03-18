@@ -1,6 +1,7 @@
 ﻿Imports Dapper
 Imports MitsubishiMotorsPartsECommerce.BO
 Imports MitsubishiMotorsPartsECommerce.DAL.Interfaces
+Imports MitsubishiMotorsPartsECommerce.DAL.MitsubishiMotorsPartsECommerce.DAL
 Imports System.Configuration
 Imports System.Data.SqlClient
 
@@ -8,8 +9,7 @@ Public Class CategoryDAL
     Implements ICategoryDAL
 
     Private Function GetConnectionString() As String
-        'Return "Data Source=.\BSISQLEXPRESS;Initial Catalog=MitsubishiMotorsPartsECommerce;Integrated Security=True;TrustServerCertificate=True"
-        Return ConfigurationManager.ConnectionStrings("MyDbConnectionString").ConnectionString
+        Return Helper.GetConnectionString()
     End Function
 
     Public Sub Delete(ByVal id As Integer) Implements ICrudDAL(Of ProductCategory).Delete

@@ -4,12 +4,12 @@ Imports System.Data.SqlClient
 Imports Dapper
 Imports Dapper.SqlMapper
 Imports MitsubishiMotorsPartsECommerce.BO
-
+Imports MitsubishiMotorsPartsECommerce.DAL.MitsubishiMotorsPartsECommerce.DAL
 Public Class AdminDAL
     Implements IAdminDAL
 
     Private Function GetConnectionString() As String
-        Return ConfigurationManager.ConnectionStrings("MyDbConnectionString").ConnectionString
+        Return Helper.GetConnectionString()
     End Function
 
     Public Sub ChangePassword(username As String, newPassword As String) Implements IAdminDAL.ChangePassword
