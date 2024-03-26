@@ -1,0 +1,6 @@
+@MitsubishiMotorsPartsECommerce.RESTServices_HostAddress = http://localhost:5236
+
+GET {{MitsubishiMotorsPartsECommerce.RESTServices_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
